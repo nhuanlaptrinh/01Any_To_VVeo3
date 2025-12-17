@@ -1,0 +1,1334 @@
+{
+  "name": "01LinkYoutube_To_VVeo3_V02",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "Worflow tại Video từ Link Youtube\n",
+        "height": 736,
+        "width": 6032
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        12048,
+        2608
+      ],
+      "id": "4c0749a9-29a0-42f8-9d59-da63dcae3491",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0c585362-28fa-428a-a9a6-da0c7adb293d",
+              "leftValue": "={{ $json.Status }}",
+              "rightValue": "Run",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        13104,
+        3120
+      ],
+      "id": "dc69b67d-2aee-4873-95d4-10d515a381c7",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic",
+          "mode": "list",
+          "cachedResultName": "02. Video_Prompt_Youtube_Prompt_Image_alt",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Youtube",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Limit1').item.json.row_number }}",
+            "Status": "Pro"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "URLs",
+              "displayName": "URLs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Prompts",
+              "displayName": "Prompts",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video_names",
+              "displayName": "Video_names",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Prompt Customs",
+              "displayName": "Prompt Customs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Video_name_customs",
+              "displayName": "Video_name_customs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        13552,
+        3120
+      ],
+      "id": "3274919f-0f15-4a70-af37-ec0827ddecd1",
+      "name": "Update row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Ac91EFYN3SiuFuHK",
+          "name": "Google Sheets account 7"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5cedc3de-6221-4d7e-a6c8-82f4cb9cf0e9",
+              "name": "PROJECT_ID",
+              "type": "string",
+              "value": "YOUR_PROJECT_ID"
+            },
+            {
+              "id": "90019751-e2d5-4764-9bf9-e13916dcc528",
+              "name": "MODEL_VERSION",
+              "type": "string",
+              "value": "veo-3.1-generate-001"
+            },
+            {
+              "id": "67ab205c-82b3-4263-99c4-c906a0ca6ae9",
+              "name": "LOCATION",
+              "type": "string",
+              "value": "us-central1"
+            },
+            {
+              "id": "413415fb-60c5-4d0d-ac45-1e6178a55227",
+              "name": "TEXT_PROMPT",
+              "type": "string",
+              "value": "={{ $json.Prompts }}"
+            },
+            {
+              "id": "bf0910e1-b757-4852-9341-a7792161f89b",
+              "name": "ACCESS_TOKEN",
+              "type": "string",
+              "value": "YOUR_ACCESS_TOKEN"
+            },
+            {
+              "id": "17954335-b96b-4813-9c4a-20817d675448",
+              "name": "API_ENDPOINT",
+              "type": "string",
+              "value": "us-central1-aiplatform.googleapis.com"
+            },
+            {
+              "id": "aspect-ratio",
+              "name": "ASPECT_RATIO",
+              "type": "string",
+              "value": "9:16"
+            },
+            {
+              "id": "sample-count",
+              "name": "SAMPLE_COUNT",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "id": "duration-seconds",
+              "name": "DURATION_SECONDS",
+              "type": "string",
+              "value": "8"
+            },
+            {
+              "id": "person-generation",
+              "name": "PERSON_GENERATION",
+              "type": "string",
+              "value": "allow_all"
+            },
+            {
+              "id": "add-watermark",
+              "name": "ADD_WATERMARK",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "id": "include-rai-reason",
+              "name": "INCLUDE_RAI_REASON",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "id": "generate-audio",
+              "name": "GENERATE_AUDIO",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "id": "client-id",
+              "name": "CLIENT_ID",
+              "type": "string",
+              "value": "YOUR_CLIENT_ID"
+            },
+            {
+              "id": "client-secret",
+              "name": "CLIENT_SECRET",
+              "type": "string",
+              "value": "YOUR_CLIENT_SECRET"
+            },
+            {
+              "id": "refresh-token",
+              "name": "REFRESH_TOKEN",
+              "type": "string",
+              "value": "YOUR_REFRESH_TOKEN"
+            },
+            {
+              "id": "row-data",
+              "name": "ROW_DATA",
+              "type": "object",
+              "value": "={{ $json }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8aedec49-f3cb-4b03-adf6-70cc690f35f6",
+      "name": "Setting",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        15344,
+        3120
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "text": "=Tạo prompt tạo video để tôi đưa vào veo3 và có video theo chủ đề bê\n\nPhân tích  {{ $json.captions }}  này. TẬP TRUNG VÀO NHÂN VẬT CHÍNH:\n\nVới mỗi cảnh (chia theo giây), mô tả:\n\n1. NHÂN VẬT:\n   - Giới tính, độ tuổi ước lượng\n   - Ngoại hình: Tóc (màu, kiểu), da, dáng người\n   - Trang phục: Màu sắc, kiểu dáng cụ thể\n   - Biểu cảm khuôn mặt\n   - Tư thế cơ thể\n\n2. HÀNH ĐỘNG:\n   - Đang làm gì? (động từ cụ thể)\n   - Tay/chân/đầu di chuyển ra sao?\n   - Tốc độ hành động (nhanh/chậm/từ từ)\n   - Vị trí trong khung hình (trung tâm/bên trái/...)\n\n3. CAMERA & ÁNH SÁNG (ngắn gọn):\n   - Góc quay\n   - Ánh sáng chính\n\nBỎ QUA: Chi tiết background không quan trọng, props phụ\nBẮT BUỘC VIDEO CHỈ CÓ 8 giây nên bạn chia ra 3 phân cảnh nha\nĐỊNH DẠNG:\nCảnh 1 (0-Xs): \n- Nhân vật: [mô tả]\n- Hành động: [mô tả]\n- Camera: [ngắn gọn]",
+        "videoUrls": "={{ $('Limit1').item.json.URLs }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        14896,
+        3120
+      ],
+      "id": "fea7a4c2-1672-406f-95cf-04d104432638",
+      "name": "Analyze video1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "88vZprRPgatVJAnh",
+          "name": "Google Gemini(PaLM) Api account 4"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        13328,
+        3120
+      ],
+      "id": "c715aaf6-c6f8-4f25-82a8-49c91b54effd",
+      "name": "Limit1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://oauth2.googleapis.com/token",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "client_id",
+              "value": "={{ $('Setting').first().json.CLIENT_ID }}"
+            },
+            {
+              "name": "client_secret",
+              "value": "={{ $('Setting').first().json.CLIENT_SECRET }}"
+            },
+            {
+              "name": "refresh_token",
+              "value": "={{ $('Setting').first().json.REFRESH_TOKEN }}"
+            },
+            {
+              "name": "grant_type",
+              "value": "refresh_token"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        15792,
+        3184
+      ],
+      "id": "c6f0ae71-8dda-4766-8f6f-3cbb984615f2",
+      "name": "Get RefreshToken1"
+    },
+    {
+      "parameters": {
+        "url": "https://oauth2.googleapis.com/tokeninfo",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "access_token",
+              "value": "={{ $json.ACCESS_TOKEN }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        15568,
+        3120
+      ],
+      "id": "5c846ed3-863e-4684-908a-5cfbbb3b0133",
+      "name": "CheckTimeToken1",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic",
+          "mode": "list",
+          "cachedResultName": "02. Video_Prompt_Youtube_Prompt_Image_alt",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Youtube",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Limit1').item.json.row_number }}",
+            "Status": "Success"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "URLs",
+              "displayName": "URLs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Prompts",
+              "displayName": "Prompts",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video_names",
+              "displayName": "Video_names",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Prompt Customs",
+              "displayName": "Prompt Customs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Video_name_customs",
+              "displayName": "Video_name_customs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        17360,
+        3120
+      ],
+      "id": "c814db58-5556-4a7c-969e-3c43d8dc2eb5",
+      "name": "Update Status to Success1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Ac91EFYN3SiuFuHK",
+          "name": "Google Sheets account 7"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "=video-{{ $now.toFormat('yyyy-MM-dd-HHmmss') }}.mp4",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1gvzn-Nb2hPk6J54k_FGNaycZwO11uoPj",
+          "mode": "list",
+          "cachedResultName": "02. Video_Veo3",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1gvzn-Nb2hPk6J54k_FGNaycZwO11uoPj"
+        },
+        "options": {}
+      },
+      "id": "b6fe8879-1997-4c04-a59e-33020529077f",
+      "name": "Upload file1",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        17136,
+        3120
+      ],
+      "typeVersion": 3,
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "e2osjsVHgsECOqGE",
+          "name": "Google Drive account 4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "response.videos[0].bytesBase64Encoded",
+        "options": {}
+      },
+      "id": "4254cc5d-a323-4285-b9e3-1719a24ba455",
+      "name": "Convert to File1",
+      "type": "n8n-nodes-base.convertToFile",
+      "position": [
+        16912,
+        3120
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "check-video-ready",
+              "leftValue": "={{ $json.response && $json.response.videos && $json.response.videos[0] && $json.response.videos[0].bytesBase64Encoded ? 'ready' : 'not_ready' }}",
+              "rightValue": "ready",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        16688,
+        3120
+      ],
+      "id": "cd6cc0a6-86d5-412b-b76e-282f186ed731",
+      "name": "Check Video Ready1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('Setting').first().json.API_ENDPOINT }}/v1/projects/{{ $('Setting').first().json.PROJECT_ID }}/locations/{{ $('Setting').first().json.LOCATION }}/publishers/google/models/{{ $('Setting').first().json.MODEL_VERSION }}:fetchPredictOperation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ \n  $if(\n    $('Get RefreshToken1').isExecuted && $('Get RefreshToken1').first()?.json?.access_token,\n    $('Get RefreshToken1').first().json.access_token,\n    $('Setting').item.json.ACCESS_TOKEN\n  )\n}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"operationName\": \"{{ $json.name }}\"\n}\n",
+        "options": {}
+      },
+      "id": "cb7874cb-23e6-463d-a23e-ab61dc42db6e",
+      "name": "Vertex AI-fetch1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        16464,
+        3040
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "id": "892c9927-a83c-4a4e-9bac-4bc147fd98a8",
+      "name": "Wait1",
+      "type": "n8n-nodes-base.wait",
+      "position": [
+        16240,
+        3120
+      ],
+      "typeVersion": 1.1,
+      "webhookId": "ca4136c0-182a-43e0-b234-079ffe826eea"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $('Setting').first().json.API_ENDPOINT }}/v1/projects/{{ $('Setting').first().json.PROJECT_ID }}/locations/{{ $('Setting').first().json.LOCATION }}/publishers/google/models/{{ $('Setting').first().json.MODEL_VERSION }}:predictLongRunning",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ \n  $if(\n    $('Get RefreshToken1').isExecuted && $('Get RefreshToken1').first()?.json?.access_token,\n    $('Get RefreshToken1').first().json.access_token,\n    $('Setting').item.json.ACCESS_TOKEN\n  )\n}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "= {\n  \"endpoint\": \"projects/{{ $('Setting').first().json.PROJECT_ID }}/locations/{{ $('Setting').first().json.LOCATION }}/publishers/google/models/{{ $('Setting').first().json.MODEL_VERSION }}\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ ($('Setting').first().json.TEXT_PROMPT || '')\n        .replace(/\\*\\*/g, '')\n        .replace(/\\*/g, '')\n        .replace(/^[\\s-]+/gm, '')\n        .replace(/\"/g, '\\\\\"')\n        .replace(/\\r\\n/g, '\\n')\n        .replace(/\\n+/g, ' ')\n        .replace(/\\s{2,}/g, ' ')\n        .trim()}}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"{{ $('Setting').first().json.ASPECT_RATIO }}\",\n    \"sampleCount\": {{ $('Setting').first().json.SAMPLE_COUNT }},\n    \"durationSeconds\": \"{{ $('Setting').first().json.DURATION_SECONDS }}\",\n    \"personGeneration\": \"{{ $('Setting').first().json.PERSON_GENERATION }}\",\n    \"addWatermark\": {{ $('Setting').first().json.ADD_WATERMARK }},\n    \"includeRaiReason\": {{ $('Setting').first().json.INCLUDE_RAI_REASON }},\n    \"generateAudio\": {{ $('Setting').first().json.GENERATE_AUDIO }}\n  }\n}",
+        "options": {}
+      },
+      "id": "8f508136-837b-4a59-a362-9e22b0956ae9",
+      "name": "Vertex AI-VEO1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        16016,
+        3120
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic",
+          "mode": "list",
+          "cachedResultName": "02. Video_Prompt_Youtube_Prompt_Image_alt",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Youtube",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Limit1').item.json.row_number }}",
+            "Prompts": "={{ $json.content.parts[0].text }}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "URLs",
+              "displayName": "URLs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Prompts",
+              "displayName": "Prompts",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Video_names",
+              "displayName": "Video_names",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Prompt Customs",
+              "displayName": "Prompt Customs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Video_name_customs",
+              "displayName": "Video_name_customs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        15120,
+        3120
+      ],
+      "id": "98eb8b13-0dd6-489b-91ce-dea8d5772c0c",
+      "name": "Update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Ac91EFYN3SiuFuHK",
+          "name": "Google Sheets account 7"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic",
+          "mode": "list",
+          "cachedResultName": "02. Video_Prompt_Youtube_Prompt_Image_alt",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Youtube",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1D69s9DG_p04m3SY9Cia6ARjbRlo55cXdeYaO1MCl5ic/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        12880,
+        3120
+      ],
+      "id": "9444dfe1-3168-4bc0-bd9c-dfe8da800b62",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Ac91EFYN3SiuFuHK",
+          "name": "Google Sheets account 7"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        12656,
+        3120
+      ],
+      "id": "7aaf314d-4d32-4cb6-b9f9-c971845c68e2",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.apify.com/v2/acts/{{ $('Nhập Thông Số Đầu Vào').item.json.APIFY_ACTOR_ID }}/runs?token={{ $('Nhập Thông Số Đầu Vào').item.json.APIFY_TOKEN_PRIMARY }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"outputFormat\": \"{{ $('Nhập Thông Số Đầu Vào').item.json.OUTPUT_FORMAT }}\",\n  \"urls\": [\"{{ $('If').item.json.URLs }}\"],\n  \"maxRetries\": {{ $('Nhập Thông Số Đầu Vào').item.json.MAX_RETRIES }},\n  \"channelNameBoolean\": {{ $('Nhập Thông Số Đầu Vào').item.json.CHANNEL_NAME_BOOL }},\n  \"channelIDBoolean\": {{ $('Nhập Thông Số Đầu Vào').item.json.CHANNEL_ID_BOOL }},\n  \"dateTextBoolean\": {{ $('Nhập Thông Số Đầu Vào').item.json.DATE_TEXT_BOOL }},\n  \"relativeDateTextBoolean\": {{ $('Nhập Thông Số Đầu Vào').item.json.RELATIVE_DATE_TEXT_BOOL }},\n  \"datePublishedBoolean\": {{ $('Nhập Thông Số Đầu Vào').item.json.DATE_PUBLISHED_BOOL }},\n  \"viewCountBoolean\": {{ $('Nhập Thông Số Đầu Vào').item.json.VIEW_COUNT_BOOL }},\n  \"likesBoolean\": {{ $('Nhập Thông Số Đầu Vào').item.json.LIKES_BOOL }},\n  \"commentsBoolean\": {{ $('Nhập Thông Số Đầu Vào').item.json.COMMENTS_BOOL }},\n  \"keywordsBoolean\": {{ $('Nhập Thông Số Đầu Vào').item.json.KEYWORDS_BOOL }},\n  \"thumbnailBoolean\": {{ $('Nhập Thông Số Đầu Vào').item.json.THUMBNAIL_BOOL }},\n  \"descriptionBoolean\": {{ $('Nhập Thông Số Đầu Vào').item.json.DESCRIPTION_BOOL }},\n  \"proxyOptions\": {\n    \"useApifyProxy\": {{ $('Nhập Thông Số Đầu Vào').item.json.USE_APIFY_PROXY }},\n    \"apifyProxyGroups\": [\"{{ $('Nhập Thông Số Đầu Vào').item.json.APIFY_PROXY_GROUP }}\"]\n  }\n} ",
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        14000,
+        3120
+      ],
+      "id": "a8c79b69-bdc4-4774-95b9-325b70ba4c3a",
+      "name": "Lấy Danh Sách Các Actors1"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.apify.com/v2/actor-runs/{{ $json.data.id }}?token={{ $('Nhập Thông Số Đầu Vào').item.json.APIFY_TOKEN_PRIMARY }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "={{ $('Nhập Thông Số Đầu Vào').item.json.APIFY_TOKEN_PRIMARY }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        14224,
+        3120
+      ],
+      "id": "a2dc837d-f927-4217-b566-c7c32026c643",
+      "name": "Lấy Thông Tin Chi Tiết của Actor Sau Run1"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        14448,
+        3120
+      ],
+      "id": "bf835060-2193-4563-a537-abbd612e4f4f",
+      "name": "Wait5",
+      "webhookId": "83b62c56-0d82-4e5c-8269-058a4e1d9a6f"
+    },
+    {
+      "parameters": {
+        "method": "=GET",
+        "url": "=https://api.apify.com/v2/datasets/{{ $json.data.defaultDatasetId }}/items",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "format",
+              "value": "={{ $('Nhập Thông Số Đầu Vào').item.json.DATASET_FORMAT }}"
+            },
+            {
+              "name": "limit",
+              "value": "={{ $('Nhập Thông Số Đầu Vào').item.json.DATASET_LIMIT }}"
+            },
+            {
+              "name": "token",
+              "value": "={{ $('Nhập Thông Số Đầu Vào').item.json.APIFY_TOKEN_PRIMARY }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "={{ 'Bearer ' + $('Nhập Thông Số Đầu Vào').item.json.APIFY_TOKEN_PRIMARY }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        14672,
+        3120
+      ],
+      "id": "305f5ccd-bbbc-45ec-97cb-301962d83372",
+      "name": "Lấy kết quả của  transcript1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "APIFY_TOKEN_PRIMARY",
+              "type": "string",
+              "value": "YOUR_APIFY_TOKEN_PRIMARY",
+              "id": "f57f1557-4790-4298-8f96-6e2518294b28"
+            },
+            {
+              "name": "APIFY_ACTOR_ID",
+              "type": "string",
+              "value": "1s7eXiaukVuOr4Ueg",
+              "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+            },
+            {
+              "name": "APIFY_PROXY_GROUP",
+              "type": "string",
+              "value": "YOUR_APIFY_PROXY_GROUP",
+              "id": "136c843b-c011-45b9-a2f8-6832c5942c89"
+            },
+            {
+              "name": "OUTPUT_FORMAT",
+              "type": "string",
+              "value": "singleStringText",
+              "id": "970655a6-46c2-4016-9c52-65382880e17a"
+            },
+            {
+              "name": "MAX_RETRIES",
+              "type": "number",
+              "value": 8,
+              "id": "eb567863-0a81-4ddd-83bf-6cbbfa4af32c"
+            },
+            {
+              "name": "CHANNEL_NAME_BOOL",
+              "type": "boolean",
+              "value": true,
+              "id": "cf356a40-43d7-4c6a-ac01-45483dc31c4b"
+            },
+            {
+              "name": "CHANNEL_ID_BOOL",
+              "type": "boolean",
+              "value": true,
+              "id": "db993f3e-d5d9-4e6b-9dfb-439ca31aeb8d"
+            },
+            {
+              "name": "DATE_TEXT_BOOL",
+              "type": "boolean",
+              "value": false,
+              "id": "d6afb7a0-3a5c-494c-9e7b-adeb1779b94c"
+            },
+            {
+              "name": "RELATIVE_DATE_TEXT_BOOL",
+              "type": "boolean",
+              "value": false,
+              "id": "4171219c-bcde-488e-ad09-fc12fde2b775"
+            },
+            {
+              "name": "DATE_PUBLISHED_BOOL",
+              "type": "boolean",
+              "value": true,
+              "id": "8626c844-d924-4790-93ce-f4983b35ffa0"
+            },
+            {
+              "name": "VIEW_COUNT_BOOL",
+              "type": "boolean",
+              "value": false,
+              "id": "6cdf84f5-e513-4828-afe0-844d5cf8db42"
+            },
+            {
+              "name": "LIKES_BOOL",
+              "type": "boolean",
+              "value": false,
+              "id": "40afb710-2f28-4e2f-8652-5c424e78cb6e"
+            },
+            {
+              "name": "COMMENTS_BOOL",
+              "type": "boolean",
+              "value": false,
+              "id": "f52e0398-4943-43ef-8ac4-2f8e89552055"
+            },
+            {
+              "name": "KEYWORDS_BOOL",
+              "type": "boolean",
+              "value": false,
+              "id": "4b17ea77-82ba-4d01-a104-1aa8b1dec231"
+            },
+            {
+              "name": "THUMBNAIL_BOOL",
+              "type": "boolean",
+              "value": false,
+              "id": "3b7086d0-285d-4f7a-a571-74afe59dcf57"
+            },
+            {
+              "name": "DESCRIPTION_BOOL",
+              "type": "boolean",
+              "value": false,
+              "id": "95efb78a-86a1-4e2c-a174-84108d30c4b5"
+            },
+            {
+              "name": "USE_APIFY_PROXY",
+              "type": "boolean",
+              "value": true,
+              "id": "23269021-59aa-43be-b115-772bd2b5d807"
+            },
+            {
+              "name": "DATASET_FORMAT",
+              "type": "string",
+              "value": "json",
+              "id": "f105869f-d932-444b-9ff2-29c37f0e933b"
+            },
+            {
+              "name": "DATASET_LIMIT",
+              "type": "number",
+              "value": 100,
+              "id": "756704fd-88db-4b78-9b6f-04a18f3d031c"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        13776,
+        3120
+      ],
+      "id": "de46e1f5-915d-4e4a-9e85-b7bac9dd0390",
+      "name": "Nhập Thông Số Đầu Vào"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Limit1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Nhập Thông Số Đầu Vào",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze video1": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit1": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Setting": {
+      "main": [
+        [
+          {
+            "node": "CheckTimeToken1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CheckTimeToken1": {
+      "main": [
+        [
+          {
+            "node": "Vertex AI-VEO1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get RefreshToken1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get RefreshToken1": {
+      "main": [
+        [
+          {
+            "node": "Vertex AI-VEO1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload file1": {
+      "main": [
+        [
+          {
+            "node": "Update Status to Success1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File1": {
+      "main": [
+        [
+          {
+            "node": "Upload file1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Video Ready1": {
+      "main": [
+        [
+          {
+            "node": "Convert to File1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vertex AI-fetch1": {
+      "main": [
+        [
+          {
+            "node": "Check Video Ready1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Vertex AI-fetch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vertex AI-VEO1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Setting",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lấy Danh Sách Các Actors1": {
+      "main": [
+        [
+          {
+            "node": "Lấy Thông Tin Chi Tiết của Actor Sau Run1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lấy Thông Tin Chi Tiết của Actor Sau Run1": {
+      "main": [
+        [
+          {
+            "node": "Wait5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait5": {
+      "main": [
+        [
+          {
+            "node": "Lấy kết quả của  transcript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lấy kết quả của  transcript1": {
+      "main": [
+        [
+          {
+            "node": "Analyze video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Nhập Thông Số Đầu Vào": {
+      "main": [
+        [
+          {
+            "node": "Lấy Danh Sách Các Actors1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a34159f9-77d5-4331-acc5-a869249c97dd",
+  "meta": {
+    "instanceId": "8ae9064574590f4bef62fe6c8cafaae52a5a90dd40cb184103af1049753a2d5d"
+  },
+  "id": "iIX67x3RZgCkR3M1",
+  "tags": []
+}
