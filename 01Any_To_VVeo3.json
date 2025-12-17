@@ -138,10 +138,10 @@
         },
         "folderId": {
           "__rl": true,
-          "value": "1AQkQRVHO3QpKYRX0YnUbiEKr9ud5cd21",
+          "value": "YOUR_GOOGLE_DRIVE_FOLDER_ID",
           "mode": "list",
           "cachedResultName": "Video_Veo3",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1AQkQRVHO3QpKYRX0YnUbiEKr9ud5cd21"
+          "cachedResultUrl": "https://drive.google.com/drive/folders/YOUR_GOOGLE_DRIVE_FOLDER_ID"
         },
         "options": {}
       },
@@ -165,17 +165,17 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg",
+          "value": "YOUR_GOOGLE_SHEETS_DOCUMENT_ID",
           "mode": "list",
           "cachedResultName": "Generate Prompt from URL",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_DOCUMENT_ID/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
           "value": 494126530,
           "mode": "list",
           "cachedResultName": "Tạo Video từ Câu Prompt",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg/edit#gid=494126530"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_DOCUMENT_ID/edit#gid=YOUR_SHEET_ID"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -328,7 +328,7 @@
               "id": "5cedc3de-6221-4d7e-a6c8-82f4cb9cf0e9",
               "name": "PROJECT_ID",
               "type": "string",
-              "value": "n8npython-479410"
+              "value": "YOUR_PROJECT_ID"
             },
             {
               "id": "90019751-e2d5-4764-9bf9-e13916dcc528",
@@ -352,7 +352,7 @@
               "id": "bf0910e1-b757-4852-9341-a7792161f89b",
               "name": "ACCESS_TOKEN",
               "type": "string",
-              "value": "ya29.a0Aa7pCA9Usf7M5PYDxvo4f0-yJwuU0O2yci9Ypa1sgc6p9QDlo1G8XTmOt2Tz-rqlyWSi35E5KNDO9fOBm5n_rt-wp_HWwxTg6D7MnuRf4uSaC0p_ZtSWynCrehROk9d9UavIWc5IGBl0RXd-J47P1teRuRFkkKzhbuePtjkPknwQS2U5P0ssz3RI_TYk1d-soFaMVeseaCgYKAXkSARcSFQHGX2MiAVtlRwP6BMqY5ofe_VKNgQ0207"
+              "value": "YOUR_ACCESS_TOKEN"
             },
             {
               "id": "17954335-b96b-4813-9c4a-20817d675448",
@@ -406,19 +406,19 @@
               "id": "client-id",
               "name": "CLIENT_ID",
               "type": "string",
-              "value": "823311730572-tbm9sjtf8sonll98v011o8o30aqebkti.apps.googleusercontent.com"
+              "value": "YOUR_CLIENT_ID"
             },
             {
               "id": "client-secret",
               "name": "CLIENT_SECRET",
               "type": "string",
-              "value": "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"
+              "value": "YOUR_CLIENT_SECRET"
             },
             {
               "id": "refresh-token",
               "name": "REFRESH_TOKEN",
               "type": "string",
-              "value": "1//04plJd9BIqvF_CgYIARAAGAQSNwF-L9Ir40JaQ02eJLCwRKgS-SJP0GauDZ10HxmmpOunYj4TKtEEOwIwgSxvCn5fVfEOn-1ki0o"
+              "value": "YOUR_REFRESH_TOKEN"
             },
             {
               "id": "row-data",
@@ -476,17 +476,17 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg",
+          "value": "YOUR_GOOGLE_SHEETS_DOCUMENT_ID",
           "mode": "list",
           "cachedResultName": "Generate Prompt from URL",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_DOCUMENT_ID/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
           "value": 494126530,
           "mode": "list",
           "cachedResultName": "Tạo Video từ Câu Prompt",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg/edit#gid=494126530"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_DOCUMENT_ID/edit#gid=YOUR_SHEET_ID"
         },
         "options": {}
       },
@@ -563,17 +563,17 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg",
+          "value": "YOUR_GOOGLE_SHEETS_DOCUMENT_ID",
           "mode": "list",
           "cachedResultName": "Generate Prompt from URL",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_DOCUMENT_ID/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
           "value": 494126530,
           "mode": "list",
           "cachedResultName": "Tạo Video từ Câu Prompt",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg/edit#gid=494126530"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_DOCUMENT_ID/edit#gid=YOUR_SHEET_ID"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -695,17 +695,17 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg",
+          "value": "YOUR_GOOGLE_SHEETS_DOCUMENT_ID",
           "mode": "list",
           "cachedResultName": "Generate Prompt from URL",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg/edit?usp=drivesdk"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_DOCUMENT_ID/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
           "value": 494126530,
           "mode": "list",
           "cachedResultName": "Tạo Video từ Câu Prompt",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1d3DpJOJL0ibESbzHoYQu9WwBOTD5dUgzq_nBWl0QPbg/edit#gid=494126530"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEETS_DOCUMENT_ID/edit#gid=YOUR_SHEET_ID"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -925,10 +925,10 @@
         },
         "folderId": {
           "__rl": true,
-          "value": "1AQkQRVHO3QpKYRX0YnUbiEKr9ud5cd21",
+          "value": "YOUR_GOOGLE_DRIVE_FOLDER_ID",
           "mode": "list",
           "cachedResultName": "Video_Veo3",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1AQkQRVHO3QpKYRX0YnUbiEKr9ud5cd21"
+          "cachedResultUrl": "https://drive.google.com/drive/folders/YOUR_GOOGLE_DRIVE_FOLDER_ID"
         },
         "options": {}
       },
@@ -1016,7 +1016,7 @@
               "id": "5cedc3de-6221-4d7e-a6c8-82f4cb9cf0e9",
               "name": "PROJECT_ID",
               "type": "string",
-              "value": "n8npython-479410"
+              "value": "YOUR_PROJECT_ID"
             },
             {
               "id": "90019751-e2d5-4764-9bf9-e13916dcc528",
@@ -1040,7 +1040,7 @@
               "id": "bf0910e1-b757-4852-9341-a7792161f89b",
               "name": "ACCESS_TOKEN",
               "type": "string",
-              "value": "ya29.a0Aa7pCA9Usf7M5PYDxvo4f0-yJwuU0O2yci9Ypa1sgc6p9QDlo1G8XTmOt2Tz-rqlyWSi35E5KNDO9fOBm5n_rt-wp_HWwxTg6D7MnuRf4uSaC0p_ZtSWynCrehROk9d9UavIWc5IGBl0RXd-J47P1teRuRFkkKzhbuePtjkPknwQS2U5P0ssz3RI_TYk1d-soFaMVeseaCgYKAXkSARcSFQHGX2MiAVtlRwP6BMqY5ofe_VKNgQ0207"
+              "value": "YOUR_ACCESS_TOKEN"
             },
             {
               "id": "17954335-b96b-4813-9c4a-20817d675448",
@@ -1094,19 +1094,19 @@
               "id": "client-id",
               "name": "CLIENT_ID",
               "type": "string",
-              "value": "823311730572-tbm9sjtf8sonll98v011o8o30aqebkti.apps.googleusercontent.com"
+              "value": "YOUR_CLIENT_ID"
             },
             {
               "id": "client-secret",
               "name": "CLIENT_SECRET",
               "type": "string",
-              "value": "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"
+              "value": "YOUR_CLIENT_SECRET"
             },
             {
               "id": "refresh-token",
               "name": "REFRESH_TOKEN",
               "type": "string",
-              "value": "1//04plJd9BIqvF_CgYIARAAGAQSNwF-L9Ir40JaQ02eJLCwRKgS-SJP0GauDZ10HxmmpOunYj4TKtEEOwIwgSxvCn5fVfEOn-1ki0o"
+              "value": "YOUR_REFRESH_TOKEN"
             },
             {
               "id": "row-data",
@@ -1403,10 +1403,10 @@
         },
         "folderId": {
           "__rl": true,
-          "value": "1AQkQRVHO3QpKYRX0YnUbiEKr9ud5cd21",
+          "value": "YOUR_GOOGLE_DRIVE_FOLDER_ID",
           "mode": "list",
           "cachedResultName": "Video_Veo3",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1AQkQRVHO3QpKYRX0YnUbiEKr9ud5cd21"
+          "cachedResultUrl": "https://drive.google.com/drive/folders/YOUR_GOOGLE_DRIVE_FOLDER_ID"
         },
         "options": {}
       },
@@ -1494,7 +1494,7 @@
               "id": "5cedc3de-6221-4d7e-a6c8-82f4cb9cf0e9",
               "name": "PROJECT_ID",
               "type": "string",
-              "value": "n8npython-479410"
+              "value": "YOUR_PROJECT_ID"
             },
             {
               "id": "90019751-e2d5-4764-9bf9-e13916dcc528",
@@ -1518,7 +1518,7 @@
               "id": "bf0910e1-b757-4852-9341-a7792161f89b",
               "name": "ACCESS_TOKEN",
               "type": "string",
-              "value": "ya29.a0ATi6K2v7KMDwRqoskMsbzaelaJfcR3HxQV4Rgh5LL0e9i0VsY0ZiVNYXh9BWaXlw5V8ONW6xtoL-i7UEKYiid6TAGj5WzaqFAUirby9OQQYZokUq4Fe7yYrZx_1-1QPy40JztOkNxWFNEH-exihpDwnrttxFz0qiIn66VxixawBbruScyhpbjT4EfThY7audHcpd0XMaCgYKAUcSARcSFQHGX2MiwyOhptpbTvlK6eMEw_5PjQ0206"
+              "value": "YOUR_ACCESS_TOKEN"
             },
             {
               "id": "17954335-b96b-4813-9c4a-20817d675448",
@@ -1572,19 +1572,19 @@
               "id": "client-id",
               "name": "CLIENT_ID",
               "type": "string",
-              "value": "823311730572-tbm9sjtf8sonll98v011o8o30aqebkti.apps.googleusercontent.com"
+              "value": "YOUR_CLIENT_ID"
             },
             {
               "id": "client-secret",
               "name": "CLIENT_SECRET",
               "type": "string",
-              "value": "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"
+              "value": "YOUR_CLIENT_SECRET"
             },
             {
               "id": "refresh-token",
               "name": "REFRESH_TOKEN",
               "type": "string",
-              "value": "1//04plJd9BIqvF_CgYIARAAGAQSNwF-L9Ir40JaQ02eJLCwRKgS-SJP0GauDZ10HxmmpOunYj4TKtEEOwIwgSxvCn5fVfEOn-1ki0o"
+              "value": "YOUR_REFRESH_TOKEN"
             },
             {
               "id": "row-data",
@@ -1959,7 +1959,7 @@
               "id": "5cedc3de-6221-4d7e-a6c8-82f4cb9cf0e9",
               "name": "PROJECT_ID",
               "type": "string",
-              "value": "n8npython-479410"
+              "value": "YOUR_PROJECT_ID"
             },
             {
               "id": "90019751-e2d5-4764-9bf9-e13916dcc528",
@@ -1983,7 +1983,7 @@
               "id": "bf0910e1-b757-4852-9341-a7792161f89b",
               "name": "ACCESS_TOKEN",
               "type": "string",
-              "value": "ya29.a0Aa7pCA-Ec_W-vETHiwabmOeRWXEUmiYlxT9I_XiCldXGnyoSzwRe95xVlg6jvfiBXfW2iAzDItVQKewZBVzyzz8QZqgMto3n9TFvouKdIfO6ZdRSS0GMzpZ_eJpszQ5Un-wQEf-EP7rOcr8zBclOaTSfcQfBiT4bCX4BowIGLp_X-niMMNzYzEy5wlvm9Yx8ohOymrd0aCgYKAbgSARcSFQHGX2MiMOi7OBAdhmcEiDXfO_lw-w0207"
+              "value": "YOUR_ACCESS_TOKEN"
             },
             {
               "id": "17954335-b96b-4813-9c4a-20817d675448",
@@ -2037,19 +2037,19 @@
               "id": "client-id",
               "name": "CLIENT_ID",
               "type": "string",
-              "value": "823311730572-tbm9sjtf8sonll98v011o8o30aqebkti.apps.googleusercontent.com"
+              "value": "YOUR_CLIENT_ID"
             },
             {
               "id": "client-secret",
               "name": "CLIENT_SECRET",
               "type": "string",
-              "value": "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"
+              "value": "YOUR_CLIENT_SECRET"
             },
             {
               "id": "refresh-token",
               "name": "REFRESH_TOKEN",
               "type": "string",
-              "value": "1//04plJd9BIqvF_CgYIARAAGAQSNwF-L9Ir40JaQ02eJLCwRKgS-SJP0GauDZ10HxmmpOunYj4TKtEEOwIwgSxvCn5fVfEOn-1ki0o"
+              "value": "YOUR_REFRESH_TOKEN"
             },
             {
               "id": "row-data",
@@ -2593,17 +2593,17 @@
             {
               "name": "APIFY_TOKEN_PRIMARY",
               "type": "string",
-              "value": "apify_api_y1U08omJvUIg3y19345AhaCbc0PEp64bkXsX"
+              "value": "YOUR_APIFY_TOKEN_PRIMARY"
             },
             {
               "name": "APIFY_TOKEN_ACTOR_RUN",
               "type": "string",
-              "value": "apify_api_4eTs27f4B9V16YDCsrKE4jkriaYl823ixoQk"
+              "value": "YOUR_APIFY_TOKEN_ACTOR_RUN"
             },
             {
               "name": "APIFY_PROXY_GROUP",
               "type": "string",
-              "value": "BUYPROXIES94952"
+              "value": "YOUR_APIFY_PROXY_GROUP"
             },
             {
               "name": "OUTPUT_FORMAT",
