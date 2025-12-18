@@ -1,19 +1,19 @@
 {
-  "name": "01LinkYoutube_To_VVeo3_V02",
+  "name": "01LinkYoutube_To_VVeo3_V03",
   "nodes": [
     {
       "parameters": {
         "content": "Worflow tại Video từ Link Youtube\n",
         "height": 736,
-        "width": 6032
+        "width": 5376
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        12048,
-        2608
+        0,
+        0
       ],
-      "id": "4c0749a9-29a0-42f8-9d59-da63dcae3491",
+      "id": "6db1f719-6b9b-454c-8a07-b8910042bd5b",
       "name": "Sticky Note1"
     },
     {
@@ -43,10 +43,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        13104,
-        3120
+        640,
+        320
       ],
-      "id": "dc69b67d-2aee-4873-95d4-10d515a381c7",
+      "id": "8c2653c0-8d42-4624-93f3-7191e7970d80",
       "name": "If"
     },
     {
@@ -155,10 +155,10 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        13552,
-        3120
+        1088,
+        320
       ],
-      "id": "3274919f-0f15-4a70-af37-ec0827ddecd1",
+      "id": "9975fd1b-fbf4-4444-beae-fbe3f4eb2068",
       "name": "Update row in sheet1",
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -175,7 +175,7 @@
               "id": "5cedc3de-6221-4d7e-a6c8-82f4cb9cf0e9",
               "name": "PROJECT_ID",
               "type": "string",
-              "value": "YOUR_PROJECT_ID"
+              "value": "cntmake-442905"
             },
             {
               "id": "90019751-e2d5-4764-9bf9-e13916dcc528",
@@ -199,7 +199,7 @@
               "id": "bf0910e1-b757-4852-9341-a7792161f89b",
               "name": "ACCESS_TOKEN",
               "type": "string",
-              "value": "YOUR_ACCESS_TOKEN"
+              "value": "1//04ONlVbX3NnaVCgYIARAAGAQSNwF-L9IrxB2EgwmuAQcjRjpUxtIEqzcrH0Bhg603sLJ4iLj4PHg_kCASqZZnFls2s59QrxCyhAA"
             },
             {
               "id": "17954335-b96b-4813-9c4a-20817d675448",
@@ -253,19 +253,19 @@
               "id": "client-id",
               "name": "CLIENT_ID",
               "type": "string",
-              "value": "YOUR_CLIENT_ID"
+              "value": "349761167636-fvcmldolcg5dqk93pj4vlg4v1j4t3185.apps.googleusercontent.com"
             },
             {
               "id": "client-secret",
               "name": "CLIENT_SECRET",
               "type": "string",
-              "value": "YOUR_CLIENT_SECRET"
+              "value": "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"
             },
             {
               "id": "refresh-token",
               "name": "REFRESH_TOKEN",
               "type": "string",
-              "value": "YOUR_REFRESH_TOKEN"
+              "value": "1//04ONlVbX3NnaVCgYIARAAGAQSNwF-L9IrxB2EgwmuAQcjRjpUxtIEqzcrH0Bhg603sLJ4iLj4PHg_kCASqZZnFls2s59QrxCyhAA"
             },
             {
               "id": "row-data",
@@ -277,12 +277,12 @@
         },
         "options": {}
       },
-      "id": "8aedec49-f3cb-4b03-adf6-70cc690f35f6",
+      "id": "0c374869-66f8-4b26-8561-a16e2f5d7c0b",
       "name": "Setting",
       "type": "n8n-nodes-base.set",
       "position": [
-        15344,
-        3120
+        2880,
+        320
       ],
       "typeVersion": 3.4
     },
@@ -296,22 +296,22 @@
           "mode": "list",
           "cachedResultName": "models/gemini-2.5-flash"
         },
-        "text": "=Tạo prompt tạo video để tôi đưa vào veo3 và có video theo chủ đề bê\n\nPhân tích  {{ $json.captions }}  này. TẬP TRUNG VÀO NHÂN VẬT CHÍNH:\n\nVới mỗi cảnh (chia theo giây), mô tả:\n\n1. NHÂN VẬT:\n   - Giới tính, độ tuổi ước lượng\n   - Ngoại hình: Tóc (màu, kiểu), da, dáng người\n   - Trang phục: Màu sắc, kiểu dáng cụ thể\n   - Biểu cảm khuôn mặt\n   - Tư thế cơ thể\n\n2. HÀNH ĐỘNG:\n   - Đang làm gì? (động từ cụ thể)\n   - Tay/chân/đầu di chuyển ra sao?\n   - Tốc độ hành động (nhanh/chậm/từ từ)\n   - Vị trí trong khung hình (trung tâm/bên trái/...)\n\n3. CAMERA & ÁNH SÁNG (ngắn gọn):\n   - Góc quay\n   - Ánh sáng chính\n\nBỎ QUA: Chi tiết background không quan trọng, props phụ\nBẮT BUỘC VIDEO CHỈ CÓ 8 giây nên bạn chia ra 3 phân cảnh nha\nĐỊNH DẠNG:\nCảnh 1 (0-Xs): \n- Nhân vật: [mô tả]\n- Hành động: [mô tả]\n- Camera: [ngắn gọn]",
+        "text": "=Create a high-quality cinematic explainer video in Vietnamese that visually illustrates the following Vietnamese transcript:\n\n{{ $json.captions }}\n\nLANGUAGE REQUIREMENT:\n- All narration, dialogue, and implied language must be Vietnamese\n- Visuals must clearly match Vietnamese spoken content\n\nVIDEO LENGTH:\n- Total video duration: exactly 8 seconds\n\nVIDEO STYLE:\n- Realistic cinematic style\n- Natural, soft lighting\n- Clean, modern, professional look\n- Smooth camera movement (slow pan, gentle zoom)\n- No subtitles or on-screen text unless naturally appearing in the environment\n\nSCENE STRUCTURE:\n- Divide the 8-second video into multiple short scenes (1–2 seconds per scene)\n- Each scene visually represents the meaning of the transcript at that moment\n- Smooth and natural transitions between scenes\n\nMAIN CHARACTER:\n- One consistent main character throughout the entire video\n- The character must be an Asian person\n- Neutral, friendly appearance suitable for a general audience\n- Simple, modern clothing\n- Consistent facial features, hairstyle, and outfit across all scenes\n- Natural facial expressions and calm body language\n- The main character should be the visual focus in most scenes\n\nCHARACTER ACTIONS:\n- Actions must directly reflect the Vietnamese narration\n- Natural movements: thinking, explaining, working, observing\n- Avoid exaggerated or dramatic gestures\n\nENVIRONMENT:\n- Clean and neutral environments such as:\n  - Modern office\n  - Home workspace\n  - Classroom\n  - Minimalist indoor space\n- No brand logos, no copyrighted characters\n- No sensitive, controversial, or unsafe elements\n\nCAMERA & COMPOSITION:\n- Use a mix of close-up, medium, and wide shots\n- Cinematic depth of field\n- Stable framing, no shaky camera\n- Clear subject focus\n\nCONTENT SAFETY:\n- Family-friendly visuals\n- No violence, no weapons\n- No political or persuasive content\n- No sensitive personal attributes\n- Neutral and informative tone\n\nAUDIO & TIMING:\n- Visual pacing must match the Vietnamese narration rhythm\n- Each scene must align clearly with the spoken content\n- Video ends cleanly at 8 seconds\n\nGOAL:\n- Create a clear and engaging visual explanation that helps viewers easily understand the Vietnamese transcript within 8 seconds\n\n",
         "videoUrls": "={{ $('Limit1').item.json.URLs }}",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        14896,
-        3120
+        2432,
+        320
       ],
-      "id": "fea7a4c2-1672-406f-95cf-04d104432638",
+      "id": "eb005653-7e3e-4257-8b70-81acba4d0e7b",
       "name": "Analyze video1",
       "credentials": {
         "googlePalmApi": {
-          "id": "88vZprRPgatVJAnh",
-          "name": "Google Gemini(PaLM) Api account 4"
+          "id": "kySImgI1WWGnreMX",
+          "name": "Google Gemini(PaLM) Api account 5"
         }
       }
     },
@@ -320,10 +320,10 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        13328,
-        3120
+        864,
+        320
       ],
-      "id": "c715aaf6-c6f8-4f25-82a8-49c91b54effd",
+      "id": "a73533a7-8d32-413b-802d-1694a739d8ab",
       "name": "Limit1"
     },
     {
@@ -357,10 +357,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        15792,
-        3184
+        3328,
+        384
       ],
-      "id": "c6f0ae71-8dda-4766-8f6f-3cbb984615f2",
+      "id": "88270272-6181-48db-8701-aa12468e6728",
       "name": "Get RefreshToken1"
     },
     {
@@ -380,10 +380,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        15568,
-        3120
+        3104,
+        320
       ],
-      "id": "5c846ed3-863e-4684-908a-5cfbbb3b0133",
+      "id": "285fbcc7-351b-4f36-a10f-496be7c690c8",
       "name": "CheckTimeToken1",
       "onError": "continueErrorOutput"
     },
@@ -408,7 +408,8 @@
           "mappingMode": "defineBelow",
           "value": {
             "row_number": "={{ $('Limit1').item.json.row_number }}",
-            "Status": "Success"
+            "Status": "Success",
+            "Video_names": "={{ $json.name }}"
           },
           "matchingColumns": [
             "row_number"
@@ -493,10 +494,10 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        17360,
-        3120
+        4896,
+        320
       ],
-      "id": "c814db58-5556-4a7c-969e-3c43d8dc2eb5",
+      "id": "996bcd98-84a6-407c-b1dc-3bbf7f2c22ef",
       "name": "Update Status to Success1",
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -524,12 +525,12 @@
         },
         "options": {}
       },
-      "id": "b6fe8879-1997-4c04-a59e-33020529077f",
+      "id": "2fd69141-0037-4725-b7c5-6d75d4afd6a8",
       "name": "Upload file1",
       "type": "n8n-nodes-base.googleDrive",
       "position": [
-        17136,
-        3120
+        4672,
+        320
       ],
       "typeVersion": 3,
       "credentials": {
@@ -545,12 +546,12 @@
         "sourceProperty": "response.videos[0].bytesBase64Encoded",
         "options": {}
       },
-      "id": "4254cc5d-a323-4285-b9e3-1719a24ba455",
+      "id": "31ec5a23-5444-4eec-bc4d-efe98014b1c6",
       "name": "Convert to File1",
       "type": "n8n-nodes-base.convertToFile",
       "position": [
-        16912,
-        3120
+        4448,
+        320
       ],
       "typeVersion": 1.1
     },
@@ -581,10 +582,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.1,
       "position": [
-        16688,
-        3120
+        4224,
+        320
       ],
-      "id": "cd6cc0a6-86d5-412b-b76e-282f186ed731",
+      "id": "68fb378d-b56d-4849-9fa2-0ae6969862b2",
       "name": "Check Video Ready1"
     },
     {
@@ -609,12 +610,12 @@
         "jsonBody": "={\n  \"operationName\": \"{{ $json.name }}\"\n}\n",
         "options": {}
       },
-      "id": "cb7874cb-23e6-463d-a23e-ab61dc42db6e",
+      "id": "7640c892-ae27-4237-abb0-b747659a80da",
       "name": "Vertex AI-fetch1",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        16464,
-        3040
+        4000,
+        240
       ],
       "typeVersion": 4.2
     },
@@ -623,12 +624,12 @@
         "amount": 1,
         "unit": "minutes"
       },
-      "id": "892c9927-a83c-4a4e-9bac-4bc147fd98a8",
+      "id": "7a46c984-a7bd-42e0-ac41-61e8ad5aeabf",
       "name": "Wait1",
       "type": "n8n-nodes-base.wait",
       "position": [
-        16240,
-        3120
+        3776,
+        320
       ],
       "typeVersion": 1.1,
       "webhookId": "ca4136c0-182a-43e0-b234-079ffe826eea"
@@ -655,12 +656,12 @@
         "jsonBody": "= {\n  \"endpoint\": \"projects/{{ $('Setting').first().json.PROJECT_ID }}/locations/{{ $('Setting').first().json.LOCATION }}/publishers/google/models/{{ $('Setting').first().json.MODEL_VERSION }}\",\n  \"instances\": [\n    {\n      \"prompt\": \"{{ ($('Setting').first().json.TEXT_PROMPT || '')\n        .replace(/\\*\\*/g, '')\n        .replace(/\\*/g, '')\n        .replace(/^[\\s-]+/gm, '')\n        .replace(/\"/g, '\\\\\"')\n        .replace(/\\r\\n/g, '\\n')\n        .replace(/\\n+/g, ' ')\n        .replace(/\\s{2,}/g, ' ')\n        .trim()}}\"\n    }\n  ],\n  \"parameters\": {\n    \"aspectRatio\": \"{{ $('Setting').first().json.ASPECT_RATIO }}\",\n    \"sampleCount\": {{ $('Setting').first().json.SAMPLE_COUNT }},\n    \"durationSeconds\": \"{{ $('Setting').first().json.DURATION_SECONDS }}\",\n    \"personGeneration\": \"{{ $('Setting').first().json.PERSON_GENERATION }}\",\n    \"addWatermark\": {{ $('Setting').first().json.ADD_WATERMARK }},\n    \"includeRaiReason\": {{ $('Setting').first().json.INCLUDE_RAI_REASON }},\n    \"generateAudio\": {{ $('Setting').first().json.GENERATE_AUDIO }}\n  }\n}",
         "options": {}
       },
-      "id": "8f508136-837b-4a59-a362-9e22b0956ae9",
+      "id": "4d7d9f69-7904-4a19-a1f0-2b83339d5146",
       "name": "Vertex AI-VEO1",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        16016,
-        3120
+        3552,
+        320
       ],
       "typeVersion": 4.2
     },
@@ -771,10 +772,10 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        15120,
-        3120
+        2656,
+        320
       ],
-      "id": "98eb8b13-0dd6-489b-91ce-dea8d5772c0c",
+      "id": "166f7562-8451-49be-93d3-691ec1179735",
       "name": "Update row in sheet",
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -804,10 +805,10 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        12880,
-        3120
+        416,
+        320
       ],
-      "id": "9444dfe1-3168-4bc0-bd9c-dfe8da800b62",
+      "id": "28f3e559-3781-4b52-b1e2-3c32e2a678e8",
       "name": "Get row(s) in sheet",
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -827,10 +828,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.3,
       "position": [
-        12656,
-        3120
+        192,
+        320
       ],
-      "id": "7aaf314d-4d32-4cb6-b9f9-c971845c68e2",
+      "id": "701a68c6-82e0-4730-84c2-f33ba010c7e1",
       "name": "Schedule Trigger"
     },
     {
@@ -849,10 +850,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        14000,
-        3120
+        1536,
+        320
       ],
-      "id": "a8c79b69-bdc4-4774-95b9-325b70ba4c3a",
+      "id": "ba338260-e4cf-4ef1-a532-a95ac4ec3203",
       "name": "Lấy Danh Sách Các Actors1"
     },
     {
@@ -872,10 +873,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        14224,
-        3120
+        1760,
+        320
       ],
-      "id": "a2dc837d-f927-4217-b566-c7c32026c643",
+      "id": "cdf6ee4a-609b-40ff-8a25-67663357a180",
       "name": "Lấy Thông Tin Chi Tiết của Actor Sau Run1"
     },
     {
@@ -885,10 +886,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        14448,
-        3120
+        1984,
+        320
       ],
-      "id": "bf835060-2193-4563-a537-abbd612e4f4f",
+      "id": "897e75f8-dadd-48b1-ad47-7f71bcb4b404",
       "name": "Wait5",
       "webhookId": "83b62c56-0d82-4e5c-8269-058a4e1d9a6f"
     },
@@ -935,10 +936,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        14672,
-        3120
+        2208,
+        320
       ],
-      "id": "305f5ccd-bbbc-45ec-97cb-301962d83372",
+      "id": "bafb4c74-40ae-4e1f-a94b-43b5bd1e8989",
       "name": "Lấy kết quả của  transcript1"
     },
     {
@@ -948,7 +949,7 @@
             {
               "name": "APIFY_TOKEN_PRIMARY",
               "type": "string",
-              "value": "YOUR_APIFY_TOKEN_PRIMARY",
+              "value": "apify_api_4SQDGtvL9hAT2mgLsZi9aVxMPKMbwT3PmWnK",
               "id": "f57f1557-4790-4298-8f96-6e2518294b28"
             },
             {
@@ -960,7 +961,7 @@
             {
               "name": "APIFY_PROXY_GROUP",
               "type": "string",
-              "value": "YOUR_APIFY_PROXY_GROUP",
+              "value": "BUYPROXIES94952",
               "id": "136c843b-c011-45b9-a2f8-6832c5942c89"
             },
             {
@@ -1066,10 +1067,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        13776,
-        3120
+        1312,
+        320
       ],
-      "id": "de46e1f5-915d-4e4a-9e85-b7bac9dd0390",
+      "id": "28fc88a8-2262-4f4f-abae-be5d5ac1e48b",
       "name": "Nhập Thông Số Đầu Vào"
     }
   ],
@@ -1325,10 +1326,10 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "a34159f9-77d5-4331-acc5-a869249c97dd",
+  "versionId": "2ebb9f04-a945-4a37-b998-09df0cd6f12b",
   "meta": {
     "instanceId": "8ae9064574590f4bef62fe6c8cafaae52a5a90dd40cb184103af1049753a2d5d"
   },
-  "id": "iIX67x3RZgCkR3M1",
+  "id": "U4k241sx3uFlmC3B",
   "tags": []
 }
